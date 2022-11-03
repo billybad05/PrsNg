@@ -27,6 +27,7 @@ import { RequestEditComponent } from './request/request-edit/request-edit.compon
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
+import { HeadComponent } from './common/head/head.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component'
     RequestEditComponent,
     ProductEditComponent,
     UserEditComponent,
-    VendorEditComponent
+    VendorEditComponent,
+    HeadComponent
   ],
   imports: [
     BrowserModule,FormsModule,HttpClientModule,

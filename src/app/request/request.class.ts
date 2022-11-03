@@ -1,3 +1,5 @@
+import { User } from "../user/user.class";
+
 export class Request {
 
     id: number = 0;
