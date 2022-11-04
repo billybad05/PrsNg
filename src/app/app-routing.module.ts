@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full"},
 
   { path: "user/create", component: UserCreateComponent },
-  { path: "user/datail/:id", component: UserDetailComponent },
+  { path: "user/detail/:id", component: UserDetailComponent },
   { path: "user/edit/:id", component: UserEditComponent },
   { path: "user/list", component: UserListComponent },
 

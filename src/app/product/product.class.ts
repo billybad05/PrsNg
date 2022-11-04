@@ -9,4 +9,5 @@ export class Product {
     unit: string = "Each";
     photopath: string = "";
     vendorId: number = 0;
+    vendor!: Vendor;
 }
