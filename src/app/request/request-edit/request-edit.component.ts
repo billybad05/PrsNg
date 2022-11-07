@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SystemService } from 'src/app/common/system.service';
 import { Request } from '../request.class';
 import { RequestService } from '../request.service';
 
@@ -15,6 +16,7 @@ export class RequestEditComponent implements OnInit {
   request!: Request;
 
   constructor(
+    private sys: SystemService,
     private requestsvc: RequestService,
     private route: ActivatedRoute,
     private router: Router
@@ -32,6 +34,7 @@ export class RequestEditComponent implements OnInit {
     });
   } 
   ngOnInit(): void {
+    this.sys.chkLogin();
     let id = this.route.snapshot.params["id"];
     this.requestsvc.get(id).subscribe({
       next: (res) => {

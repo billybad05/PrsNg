@@ -5,6 +5,7 @@ import { HomeComponent } from './misc/home/home.component';
 import { AboutComponent } from './misc/about/about.component';
 import { E404Component } from './misc/e404/e404.component';
 
+import { UserLoginComponent } from './user/user-login/user-login.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { VendorListComponent } from './vendor/vendor-list/vendor-list.component';
 import { RequestListComponent } from './request/request-list/request-list.component';
@@ -23,11 +24,12 @@ import { RequestEditComponent } from './request/request-edit/request-edit.compon
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
-
+import { RequestLinesComponent } from './request/request-lines/request-lines.component';
 
 const routes: Routes = [
-  { path: "", redirectTo: "/home", pathMatch: "full"},
+  { path: "", redirectTo: "/user/login", pathMatch: "full"},
 
+  { path: "user/login", component: UserLoginComponent },
   { path: "user/create", component: UserCreateComponent },
   { path: "user/detail/:id", component: UserDetailComponent },
   { path: "user/edit/:id", component: UserEditComponent },
@@ -47,6 +49,8 @@ const routes: Routes = [
   { path: "request/detail/:id", component: RequestDetailComponent },
   { path: "request/edit/:id", component: RequestEditComponent },
   { path: "request/list", component: RequestListComponent },
+
+  { path: "request/lines/:id", component: RequestLinesComponent },
   
   { path: "requestline/create", component: RequestlineCreateComponent },
   { path: "requestline/edit/:id", component: RequestlineEditComponent },

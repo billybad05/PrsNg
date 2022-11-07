@@ -29,7 +29,11 @@
                 </tr>
                 <tr>
                     <th>VendorId</th>
-                    <td><input [(ngModel)]="product.vendorId" type="text" [disabled]="IsDetailPage"></td>
+                    <td>
+                    <select [(ngModel)]="product.vendorId">
+                        <option *ngFor="let v of vendor" value="{{ v.id }}">{{ v.name }}</option>
+                    </select>     
+                    </td>
                 </tr>
             </tbody>
         </table>

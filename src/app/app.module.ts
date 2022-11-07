@@ -28,6 +28,10 @@ import { ProductEditComponent } from './product/product-edit/product-edit.compon
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
 import { HeadComponent } from './common/head/head.component';
+import { UserLoginComponent } from './user/user-login/user-login.component';
+import { BoolDisplayPipe } from './common/bool-display.pipe';
+import { RequestLinesComponent } from './request/request-lines/request-lines.component';
+import { RequestlinesComponent } from './requestlines/requestlines.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +58,11 @@ import { HeadComponent } from './common/head/head.component';
     ProductEditComponent,
     UserEditComponent,
     VendorEditComponent,
-    HeadComponent
+    HeadComponent,
+    UserLoginComponent,
+    BoolDisplayPipe,
+    RequestLinesComponent,
+    RequestlinesComponent
   ],
   imports: [
     BrowserModule,FormsModule,HttpClientModule,

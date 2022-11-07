@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SystemService } from 'src/app/common/system.service';
 
 @Component({
   selector: 'app-requestline-create',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RequestlineCreateComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private sys: SystemService
+  ) { }
 
   ngOnInit(): void {
+    this.sys.chkLogin();
   }
 
 }

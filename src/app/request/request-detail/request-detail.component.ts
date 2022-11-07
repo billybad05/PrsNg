@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RequestService } from '../request.service';
 import { Request } from '../request.class';
+import { SystemService } from 'src/app/common/system.service';
 
 @Component({
   selector: 'app-request-detail',
@@ -15,12 +16,19 @@ export class RequestDetailComponent implements OnInit {
   request!: Request;
 
   constructor(
+    private sys: SystemService,
     private requestsvc: RequestService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
 
+  showVerifyButton: boolean = false;
+
   remove(): void {
+    this.showVerifyButton = !this.showVerifyButton;
+  }
+
+  verifyDelete(): void {
     this.requestsvc.remove(this.request.id).subscribe({
       next: (res) => {
         console.debug("Request deleted!");
@@ -33,6 +41,7 @@ export class RequestDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.sys.chkLogin();
     let id = +this.route.snapshot.params["id"];
     this.requestsvc.get(id).subscribe({
       next: (res) => {

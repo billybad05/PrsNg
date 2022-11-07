@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { SystemService } from '../common/system.service';
 import { User } from './user.class';
 
 @Injectable({
@@ -8,9 +9,10 @@ import { User } from './user.class';
 })
 export class UserService {
 
-  baseurl: string = "http://localhost:5555/api/users";
+  baseurl: string = `${this.sys.baseurl}/users`;
 
   constructor(
+    private sys: SystemService,
     private http: HttpClient
   ) { }
 

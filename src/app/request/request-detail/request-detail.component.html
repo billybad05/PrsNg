@@ -17,7 +17,7 @@
                 </tr>
                 <tr>
                     <th>Rejection Reason</th>
-                    <td><input [(ngModel)]="request.rejectionReason" type="number" [disabled]="IsDetailPage"></td>
+                    <td><input [(ngModel)]="request.rejectionReason" type="text" [disabled]="IsDetailPage"></td>
                 </tr>
                 <tr>
                     <th>Delivery Mode</th>
@@ -39,6 +39,9 @@
         </table>
         <div>
             <button (click)="remove()" class="btn btn-warning">Delete</button>
+            <span *ngIf="showVerifyButton">
+                <button (click)="verifyDelete()" class="btn btn-danger">Verify Delete</button>)
+            </span>
         </div>
     </main>
 </div>

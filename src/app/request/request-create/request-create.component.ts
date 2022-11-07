@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SystemService } from 'src/app/common/system.service';
 import { Request } from '../request.class';
 import { RequestService } from '../request.service';
 
@@ -15,12 +16,15 @@ export class RequestCreateComponent implements OnInit {
   request: Request = new Request();
 
   constructor(
+    private sys: SystemService,
     private requestsvc: RequestService,
     private router: Router
+
   ) { }
 
   save(): void {
-    this.requestsvc.create(this.request).subscribe({
+      this.request.userId = this.sys.getUser()!.id;
+      this.requestsvc.create(this.request).subscribe({
       next: (res) => {
         console.debug("Request created!");
         this.router.navigateByUrl("/request/list");
@@ -32,6 +36,6 @@ export class RequestCreateComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.sys.chkLogin();
   }
 }

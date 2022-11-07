@@ -17,7 +17,7 @@
                 </tr>
                 <tr>
                     <th>Rejection Reason</th>
-                    <td><input [(ngModel)]="request.rejectionReason" type="number" [disabled]="IsDetailPage"></td>
+                    <td><input [(ngModel)]="request.rejectionReason" type="text" disabled></td>
                 </tr>
                 <tr>
                     <th>Delivery Mode</th>
@@ -25,15 +25,15 @@
                 </tr>
                 <tr>
                     <th>Status</th>
-                    <td><input [(ngModel)]="request.status" type="text" [disabled]="IsDetailPage"></td>
+                    <td><input [(ngModel)]="request.status" type="text" disabled></td>
                 </tr>
                 <tr>
                     <th>Total</th>
-                    <td><input [(ngModel)]="request.total" type="number" [disabled]="IsDetailPage"></td>
+                    <td><input [(ngModel)]="request.total" type="number" disabled></td>
                 </tr>
                 <tr>
                     <th>User</th>
-                    <td><input [(ngModel)]="request.user.username" type="text" [disabled]="IsDetailPage"></td>
+                    <td><input [(ngModel)]="request.user.username" type="text" disabled></td>
                 </tr>
             </tbody>
         </table>

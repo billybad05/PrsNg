@@ -35,6 +35,9 @@
         </table>
         <div>
             <button (click)="remove()" class="btn btn-warning">Delete</button>
+            <span *ngIf="showVerifyButton">
+                <button (click)="verifyDelete()" class="btn btn-danger">Verify Delete</button>)
+            </span>
         </div>
     </main>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SystemService } from 'src/app/common/system.service';
 import { Vendor } from '../vendor.class';
 import { VendorService } from '../vendor.service';
 
@@ -13,10 +14,12 @@ export class VendorListComponent implements OnInit {
   vendors: Vendor[] = [];
 
   constructor(
+    private sys: SystemService,
     private vendorsvc: VendorService
   ) { }
 
   ngOnInit(): void {
+    this.sys.chkLogin();
     this.vendorsvc.list().subscribe({
       next: (res) => {
         console.debug("Vendors:", res);

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SystemService } from 'src/app/common/system.service';
 import { Vendor } from '../vendor.class';
 import { VendorService } from '../vendor.service';
 
@@ -10,11 +11,12 @@ import { VendorService } from '../vendor.service';
 })
 export class VendorCreateComponent implements OnInit {
 
-  pageTitle: string = "User Create"
+  pageTitle: string = "Vendor Create"
   IsDetailPage: boolean = false;
   vendor: Vendor = new Vendor();
 
   constructor(
+    private sys: SystemService,
     private vendorsvc: VendorService,
     private router: Router
   ) { }
@@ -32,6 +34,6 @@ export class VendorCreateComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.sys.chkLogin();
   }
 }
