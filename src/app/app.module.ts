@@ -23,6 +23,7 @@ import { RequestCreateComponent } from './request/request-create/request-create.
 import { ProductCreateComponent } from './product/product-create/product-create.component';
 import { RequestlineCreateComponent } from './requestline/requestline-create/requestline-create.component';
 import { RequestlineEditComponent } from './requestline/requestline-edit/requestline-edit.component';
+import { RequestlinesComponent } from './requestline/requestlines/requestlines.component';
 import { RequestEditComponent } from './request/request-edit/request-edit.component';
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
@@ -30,8 +31,8 @@ import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component'
 import { HeadComponent } from './common/head/head.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { BoolDisplayPipe } from './common/bool-display.pipe';
-import { RequestLinesComponent } from './request/request-lines/request-lines.component';
-import { RequestlinesComponent } from './requestlines/requestlines.component';
+
+
 
 @NgModule({
   declarations: [
@@ -61,8 +62,8 @@ import { RequestlinesComponent } from './requestlines/requestlines.component';
     HeadComponent,
     UserLoginComponent,
     BoolDisplayPipe,
-    RequestLinesComponent,
-    RequestlinesComponent
+    RequestlinesComponent,
+
   ],
   imports: [
     BrowserModule,FormsModule,HttpClientModule,
