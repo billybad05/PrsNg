@@ -31,6 +31,8 @@ import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component'
 import { HeadComponent } from './common/head/head.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { BoolDisplayPipe } from './common/bool-display.pipe';
+import { RequestReviewListComponent } from './request/request-review-list/request-review-list.component';
+import { RequestReviewItemComponent } from './request/request-review-item/request-review-item.component';
 
 
 
@@ -63,6 +65,8 @@ import { BoolDisplayPipe } from './common/bool-display.pipe';
     UserLoginComponent,
     BoolDisplayPipe,
     RequestlinesComponent,
+    RequestReviewListComponent,
+    RequestReviewItemComponent,
 
   ],
   imports: [

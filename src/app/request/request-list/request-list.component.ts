@@ -10,7 +10,7 @@ import { RequestService } from '../request.service';
 })
 export class RequestListComponent implements OnInit {
 
-  pageTitle: string = "Request List"
+  pageTitle: string = "Request List";
   requests: Request[] = [];
 
   constructor(

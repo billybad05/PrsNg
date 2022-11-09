@@ -10,7 +10,6 @@
                     <th>Status</th>
                     <th>Total</th>
                     <th>User</th>
-                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -20,15 +19,11 @@
                     <td>{{ request.rejectionReason }}</td>
                     <td>{{ request.status }}</td>
                     <td>{{ request.total | currency }}</td>
-                    <td>{{ request.user.username }}</td>
-                    <td>
-                        <button (click)="review()" class="btn btn-link clickable">Submit For Review</button>
-                    </td>
+                    <td *ngIf="request.user">{{ request.user.username }}</td>
                 </tr>
             </tbody>
         </table>
         <hr>
-        <a routerLink="/requestline/create/{{ request.id }}">Create New</a> 
         <table class="table table-striped table-sm">
             <thead>
                 <tr>
@@ -37,7 +32,6 @@
                     <th>Price</th>
                     <th>Quantity</th>
                     <th>Line Total</th>
-                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -47,12 +41,16 @@
                     <td>{{ rl.product.price | currency }}</td>
                     <td>{{ rl.quantity }}</td>
                     <td>{{ rl.product.price * rl.quantity | currency }}</td>
-                    <td>
-                        <button (click)="edit(rl)" class="btn btn-link clickable">Edit</button> |
-                        <button (click)="remove(rl)" class="btn btn-link clickable">Delete</button>
-                    </td>
                 </tr>
             </tbody>
         </table>
+        <p>
+            <button (click)="approve()" class="btn btn-link text-success">Approve</button> |
+            <button (click)="reject()" class="btn btn-link text-danger">Reject</button>
+            <span *ngIf="showVerifyButton">
+                || <input [(ngModel)]="request.rejectionReason" type="text" placeholder="Rejection reason">
+                || <button (click)="verifyReject()" class="btn btn-link text-danger">Verify Reject</button>
+            </span>
+        </p>
     </main>
 </div>

@@ -25,6 +25,8 @@ import { ProductEditComponent } from './product/product-edit/product-edit.compon
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
 import { RequestlinesComponent } from './requestline/requestlines/requestlines.component';
+import { RequestReviewListComponent } from './request/request-review-list/request-review-list.component';
+import { RequestReviewItemComponent } from './request/request-review-item/request-review-item.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/user/login", pathMatch: "full"},
@@ -49,6 +51,8 @@ const routes: Routes = [
   { path: "request/detail/:id", component: RequestDetailComponent },
   { path: "request/edit/:id", component: RequestEditComponent },
   { path: "request/list", component: RequestListComponent },
+  { path: "request/review", component: RequestReviewListComponent},
+  { path: "request/review/:id", component: RequestReviewItemComponent},
   
   { path: "requestline/requestlines/:id", component: RequestlinesComponent},
   { path: "requestline/create/:id", component: RequestlineCreateComponent },
